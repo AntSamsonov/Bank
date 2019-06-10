@@ -6,6 +6,12 @@ public class Account {
     private String name;
     private int balance;
 
+    public Account(long id, String name, int balance) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+    }
+
     public long getId() {
         return id;
     }
@@ -28,5 +34,12 @@ public class Account {
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id +
+                ", name='" + name + '\'' +
+                ", balance=" + balance;
     }
 }

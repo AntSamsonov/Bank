@@ -7,6 +7,10 @@ public class MoneyService implements IMoneyService {
 
     private IAccountRepository accountRepository;
 
+    public MoneyService(IAccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
+
     public void debitAccount(long accountId, int sum) {
         Account account = accountRepository.getAccountById(accountId);
         account.setBalance(account.getBalance() + sum);
@@ -23,6 +27,9 @@ public class MoneyService implements IMoneyService {
     }
 
     public boolean transferMoney(long debitId, long creditId, int sum) {
+        if(debitId == creditId){
+            return false;
+        }
         if (creditAccount(creditId, sum)) {
             debitAccount(debitId, sum);
             return true;
