@@ -18,7 +18,6 @@ public class MoneyService implements IMoneyService {
         if (balance < sum) {
             return false;
         }
-
         account.setBalance(balance - sum);
         return true;
     }
