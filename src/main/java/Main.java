@@ -10,7 +10,7 @@ import services.MoneyService;
 public class Main {
 
     public static void main(String[] args) {
-
+        //asdaTESTdddddd
         IAccountRepository accountRepository = new AccountRepository();
 
         new Demo(accountRepository).fillData();
